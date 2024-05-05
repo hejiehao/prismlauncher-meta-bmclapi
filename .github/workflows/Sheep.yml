@@ -48,7 +48,7 @@ if response.status_code == 200:
 
 
 # 构建要更新的数据使用量字符串
-data_usage_str = f"\n\n## 数据使用量更新 - {current_date}\n本月GitHub Pages消耗数据量: {monthly_data_usage} MB"
+data_usage_str = f"\n\n## 数据使用量更新 - {current_date}\n本月 GitHub Pages 消耗数据量: {monthly_data_usage} MB"
 
 # 读取README文件
 with open('README.md', 'r') as file:
