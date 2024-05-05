@@ -47,7 +47,7 @@ jobs:
                   readme_contents = file.read()
 
               # 更新数据消耗量
-              new_readme_contents = readme_contents.replace('<!-- DATA_USAGE_START -->', f"<!-- DATA_USAGE_START -->\\n本月GitHub Pages消耗数据量: {monthly_data_usage} MB")
+              new_readme_contents = readme_contents.replace('<!-- DATA_USAGE_START -->', f"<!-- DATA_USAGE_START -->\n本月GitHub Pages消耗数据量: {monthly_data_usage} MB")
 
               # 写入新的README
               with open('README.md', 'w') as file:
