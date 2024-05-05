@@ -1,0 +1,61 @@
+name: Update and Push Data
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # 每天零点执行
+  push:
+    branches: [master]
+    paths: 
+      - 'mirror-bmclapi.py'
+
+jobs:
+  update_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+
+      - name: Set time
+        shell: bash
+        run: |
+          sudo timedatectl set-timezone 'Asia/Shanghai'
+
+      - name: Set up Python
+        uses: actions/setup-python@main
+        with:
+          python-version: '3.x'
+
+      - name: Fetch data from PrismLauncher/meta-launcher
+        run: |
+          git remote add upstream https://github.com/PrismLauncher/meta-launcher.git
+          git fetch upstream
+          git checkout master
+          git merge upstream/master --allow-unrelated-histories -X theirs # 自动接受新数据，即使有冲突
+
+      - name: Execute Python script
+        id: fetch_changes
+        shell: bash
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          python mirror-bmclapi.py
+          git add -A
+          if git diff-index --quiet HEAD; then
+            # No changes
+            echo 'changed=false' >> $GITHUB_OUTPUT
+          else
+            # Changes detected
+            echo 'changed=true' >> $GITHUB_OUTPUT
+            git commit -m "Update apiroot
+
+          GitHub Action: https://github.com/${{ github.repository }}/actions/runs/$GITHUB_RUN_ID
+            "
+          fi
+
+      - name: Push changes
+        if: steps.fetch_changes.outputs.changed == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
