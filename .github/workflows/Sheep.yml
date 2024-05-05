@@ -58,12 +58,8 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          git diff
-          if git diff --exit-code; then
-              echo "No changes to commit"
-          else
-              git config --global user.name 'GitHub Actions'
-              git config --global user.email 'actions@github.com'
-              git add README.md
-              git commit -m 'Update GitHub Pages data usage in README'
-              git push
+          rm -rf ./*
+          git init -b master
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git push https://github.com/PCL-Community/prismlauncher-meta-bmclapi.git -f
