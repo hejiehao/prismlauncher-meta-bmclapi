@@ -27,6 +27,11 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Set up Git user
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Fetch data from PrismLauncher/meta-launcher
         run: |
           git remote add upstream https://github.com/PrismLauncher/meta-launcher.git
@@ -38,8 +43,6 @@ jobs:
         id: fetch_changes
         shell: bash
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
           python mirror-bmclapi.py
           git add -A
           if git diff-index --quiet HEAD; then
