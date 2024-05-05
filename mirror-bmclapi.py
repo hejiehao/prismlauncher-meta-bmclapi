@@ -25,6 +25,7 @@ def process_files(directory):
             replace_in_file(item_path, 'https://piston-meta.mojang.com', 'https://bmclapi2.bangbang93.com')
             replace_in_file(item_path, 'https://launchermeta.mojang.com', 'https://bmclapi2.bangbang93.com')
             replace_in_file(item_path, 'https://launcher.mojang.com', 'https://bmclapi2.bangbang93.com')
+            replace_in_file(item_path, 'https://piston-data.mojang.com', 'https://bmclapi2.bangbang93.com')
             replace_in_file(item_path, 'https://libraries.minecraft.net', 'https://bmclapi2.bangbang93.com/maven')
 
             replace_in_file(item_path, 'https://maven.minecraftforge.net', 'https://bmclapi2.bangbang93.com/maven')
