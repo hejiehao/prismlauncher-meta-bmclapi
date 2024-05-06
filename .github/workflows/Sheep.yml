@@ -44,7 +44,7 @@ jobs:
               monthly_data_usage = data['monthly_data_usage']
           
               # 获取当前日期
-              current_date = datetime.now().strftime("%Y-%m-%d")
+              current_date = datetime.now().strftime("%Y-%M-%d")
           
           
           # 构建要更新的数据使用量字符串
