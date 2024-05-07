@@ -9,7 +9,7 @@
         "sha1": "3d8e55480977e32acd9844e545177e69a52f594b",
         "size": 74091,
         "totalSize": 49505710,
-        "url": "https://piston-meta.mojang.com/v1/packages/3d8e55480977e32acd9844e545177e69a52f594b/pre-1.6.json"
+        "url": "https://bmclapi2.bangbang93.com/v1/packages/3d8e55480977e32acd9844e545177e69a52f594b/pre-1.6.json"
     },
     "compatibleJavaMajors": [
         8
@@ -20,7 +20,7 @@
             "artifact": {
                 "sha1": "f6dbca5223ea2a7e89806e93d0b18162b2d58c20",
                 "size": 1309277,
-                "url": "https://launcher.mojang.com/v1/objects/f6dbca5223ea2a7e89806e93d0b18162b2d58c20/client.jar"
+                "url": "https://bmclapi2.bangbang93.com/v1/objects/f6dbca5223ea2a7e89806e93d0b18162b2d58c20/client.jar"
             }
         },
         "name": "com.mojang:minecraft:b1.4:client"
