@@ -3,19 +3,19 @@
     "libraries": [
         {
             "name": "net.fabricmc:tiny-mappings-parser:${tiny_mappings_parser}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "net.fabricmc:sponge-mixin:${sponge_mixin}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "net.fabricmc:tiny-remapper:${tiny_remapper}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "net.fabricmc:access-widener:${access_widener}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "org.quiltmc:quilt-json5:${quilt_json5}",
@@ -23,23 +23,23 @@
         },
         {
             "name": "org.ow2.asm:asm:${asm}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "org.ow2.asm:asm-analysis:${asm_analysis}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "org.ow2.asm:asm-commons:${asm_commons}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "org.ow2.asm:asm-tree:${asm_tree}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "org.ow2.asm:asm-util:${asm_util}",
-            "url": "https://bmclapi2.bangbang93.com/maven/"
+            "url": "https://maven.fabricmc.net/"
         },
         {
             "name": "org.quiltmc:quilt-config:${quilt_config}",
