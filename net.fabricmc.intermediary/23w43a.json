@@ -3,7 +3,7 @@
     "libraries": [
         {
             "name": "net.fabricmc:intermediary:23w43a",
-            "url": "https://maven.fabricmc.net"
+            "url": "https://bmclapi2.bangbang93.com/maven"
         }
     ],
     "name": "Intermediary Mappings",
