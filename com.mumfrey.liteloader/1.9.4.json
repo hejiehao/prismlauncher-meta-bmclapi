@@ -13,7 +13,7 @@
         },
         {
             "name": "com.mumfrey:liteloader:1.9.4",
-            "url": "http://dl.liteloader.com/versions/"
+            "url": "https://bmclapi.bangbang93.com/maven/com/mumfrey/liteloader/"
         }
     ],
     "mainClass": "net.minecraft.launchwrapper.Launch",
