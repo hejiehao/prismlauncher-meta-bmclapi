@@ -29,8 +29,8 @@ jobs:
 
       - name: Set up Git user
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "HelloWFB"
+          git config --local user.email "HelloWFB@users.noreply.github.com"
 
       - name: Fetch data from PrismLauncher/meta-launcher
         run: |
