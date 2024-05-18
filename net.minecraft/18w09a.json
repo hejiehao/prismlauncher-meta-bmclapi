@@ -421,7 +421,7 @@
             "artifact": {
                 "sha1": "701085c1b668d45b7c0ee5ea911b11d6691c01bc",
                 "size": 11533028,
-                "url": "https://piston-data.mojang.com/v1/objects/701085c1b668d45b7c0ee5ea911b11d6691c01bc/client.jar"
+                "url": "https://bmclapi2.bangbang93.com/v1/objects/701085c1b668d45b7c0ee5ea911b11d6691c01bc/client.jar"
             }
         },
         "name": "com.mojang:minecraft:18w09a:client"

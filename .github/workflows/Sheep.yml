@@ -1,0 +1,76 @@
+name: Update Data Usage in README
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Fetch Data Usage and Update README
+        env:
+          GITHUB_TOKEN: ${{ secrets.SHEEP }}
+          USERNAME: 'PCL-Community'
+          REPO_NAME: 'prismlauncher-meta-bmclapi'
+        run: |
+          import requests
+          import os
+          from datetime import datetime
+          
+          # 构建API请求URL
+          api_url = f"https://api.github.com/repos/{os.environ['USERNAME']}/{os.environ['REPO_NAME']}/traffic/data"
+          
+          # 发送请求
+          headers = {'Authorization': f"token {os.environ['GITHUB_TOKEN']}"}
+          response = requests.get(api_url, headers=headers)
+          
+          if response.status_code == 200:
+              data = response.json()
+              # 假设返回的数据中有月消耗数据量的字段
+              monthly_data_usage = data['monthly_data_usage']
+          
+              # 获取当前日期
+              current_date = datetime.now().strftime("%Y-%M-%d")
+          
+          
+          # 构建要更新的数据使用量字符串
+          data_usage_str = f"\n\n## 数据使用量更新 - {current_date}\n本月 GitHub Pages 消耗数据量: {monthly_data_usage} MB"
+          
+          # 读取README文件
+          with open('README.md', 'r') as file:
+              lines = file.readlines()
+          
+          # 替换最后一行
+          lines[-1] = data_usage_str + '\n\n'
+          
+          # 写入更新后的内容
+          with open('README.md', 'w') as file:
+              file.writelines(lines)
+          
+          else:
+              print("无法获取数据，请检查您的用户名、令牌或仓库名称。")
+      - name: Commit and push if changed
+        run: |
+          git diff
+          if git diff --exit-code; then
+              echo "No changes to commit"
+          else
+              git config --global user.name 'GitHub Actions'
+              git config --global user.email 'actions@github.com'
+              git add README.md
+              git commit -m 'Update GitHub Pages data usage in README'
+              git push

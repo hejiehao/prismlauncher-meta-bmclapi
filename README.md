@@ -17,3 +17,5 @@
 Assets 并不跟随 meta，所以只能加速一部分资源
 
 因为 BMCLAPI 的 Quilt 下载部分尚未完全建立，所以 Quilt 将保持使用官方源
+
+本月 GitHub Pages 消耗的数据量为：

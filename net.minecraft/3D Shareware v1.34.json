@@ -411,7 +411,7 @@
             "artifact": {
                 "sha1": "44db7d7bcd5a1bee6f54f6a623f26a1b3d1e293f",
                 "size": 18879423,
-                "url": "https://piston-data.mojang.com/v1/objects/44db7d7bcd5a1bee6f54f6a623f26a1b3d1e293f/client.jar"
+                "url": "https://bmclapi2.bangbang93.com/v1/objects/44db7d7bcd5a1bee6f54f6a623f26a1b3d1e293f/client.jar"
             }
         },
         "name": "com.mojang:minecraft:3D Shareware v1.34:client"
